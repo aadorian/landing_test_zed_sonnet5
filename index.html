@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FindAPaw – Find Your New Best Friend</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#top" class="logo">🐾 FindAPaw</a>
+      <nav class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pets">Meet the Pets</a>
+        <a href="#apply">Adopt</a>
+      </nav>
+      <a href="#apply" class="btn btn-primary nav-cta">Start Application</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">🐶 🐱 Adoption made simple</span>
+        <h1>Find your new best friend with <span class="highlight">FindAPaw</span></h1>
+        <p>Browse loving, vetted pets in your area and bring home a new family member. Every paw deserves a happy home.</p>
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-primary">Apply to Adopt</a>
+          <a href="#pets" class="btn btn-secondary">Meet the Pets</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12,000+</strong><span>Pets adopted</span></div>
+          <div><strong>500+</strong><span>Partner shelters</span></div>
+          <div><strong>4.9★</strong><span>Adopter rating</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="blob"></div>
+        <div class="hero-emoji">🐕</div>
+        <div class="hero-emoji hero-emoji-2">🐈</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="section how-it-works">
+    <div class="container">
+      <h2>How FindAPaw works</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Browse</h3>
+          <p>Search adoptable pets from trusted shelters and rescues near you.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📝</div>
+          <h3>Apply</h3>
+          <p>Fill out a simple adoption application so we can find the right match.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏡</div>
+          <h3>Bring Home</h3>
+          <p>Meet your new companion and welcome them into your family.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the pets -->
+  <section id="pets" class="section pets">
+    <div class="container">
+      <h2>Meet a few pups &amp; kitties</h2>
+      <div class="pet-grid">
+        <div class="pet-card">
+          <div class="pet-photo">🐕‍🦺</div>
+          <h3>Biscuit</h3>
+          <p>2 yr old · Golden Retriever mix · Friendly &amp; playful</p>
+        </div>
+        <div class="pet-card">
+          <div class="pet-photo">🐈‍⬛</div>
+          <h3>Luna</h3>
+          <p>1 yr old · Domestic Shorthair · Curious &amp; affectionate</p>
+        </div>
+        <div class="pet-card">
+          <div class="pet-photo">🐩</div>
+          <h3>Waffles</h3>
+          <p>4 yr old · Poodle mix · Calm &amp; loyal</p>
+        </div>
+        <div class="pet-card">
+          <div class="pet-photo">🐇</div>
+          <h3>Clover</h3>
+          <p>1 yr old · Rabbit · Gentle &amp; quiet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adoption Application Form -->
+  <section id="apply" class="section apply">
+    <div class="container apply-inner">
+      <div class="apply-intro">
+        <h2>Start your adoption application</h2>
+        <p>Tell us a bit about yourself and your home. Our team will review your application and reach out to help you find the perfect match.</p>
+      </div>
+
+      <form id="adoption-form" class="adoption-form" novalidate>
+        <div class="form-row">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required />
+        </div>
+
+        <div class="form-row-group">
+          <div class="form-row">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-row">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="homeType">Home Type</label>
+          <select id="homeType" name="homeType" required>
+            <option value="" disabled selected>Select your home type</option>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Why do you want to adopt?</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your lifestyle, experience with pets, and why you'd like to adopt..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Submit Application</button>
+
+        <p id="form-success" class="form-success" hidden>🎉 Thank you! Your application has been received. We'll be in touch soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo">🐾 FindAPaw</span>
+      <p>&copy; 2026 FindAPaw. Every paw deserves a home.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
