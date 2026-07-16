@@ -110,39 +110,55 @@
       </div>
 
       <form id="adoption-form" class="adoption-form" novalidate>
+        <p class="form-note">All fields are required.</p>
+
         <div class="form-row">
           <label for="fullName">Full Name</label>
-          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required />
-        </div>
-
-        <div class="form-row-group">
-          <div class="form-row">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
-          </div>
-          <div class="form-row">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
-          </div>
+          <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" autocomplete="name" aria-describedby="fullName-error" required />
+          <p class="field-error" id="fullName-error" hidden></p>
         </div>
 
         <div class="form-row">
-          <label for="homeType">Home Type</label>
-          <select id="homeType" name="homeType" required>
-            <option value="" disabled selected>Select your home type</option>
-            <option value="house">House</option>
-            <option value="apartment">Apartment</option>
-          </select>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email" aria-describedby="email-hint email-error" required />
+          <p class="field-hint" id="email-hint">We'll only use this to contact you about your application.</p>
+          <p class="field-error" id="email-error" hidden></p>
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" aria-describedby="phone-hint phone-error" required />
+          <p class="field-hint" id="phone-hint">In case we need to reach you quickly about a pet.</p>
+          <p class="field-error" id="phone-error" hidden></p>
+        </div>
+
+        <div class="form-row">
+          <span class="group-label">Home Type</span>
+          <div class="radio-group" role="radiogroup" aria-describedby="homeType-error">
+            <label class="radio-option">
+              <input type="radio" name="homeType" value="house" required />
+              <span>🏠 House</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="homeType" value="apartment" required />
+              <span>🏢 Apartment</span>
+            </label>
+          </div>
+          <p class="field-error" id="homeType-error" hidden></p>
         </div>
 
         <div class="form-row">
           <label for="message">Why do you want to adopt?</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us about your lifestyle, experience with pets, and why you'd like to adopt..." required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your lifestyle, experience with pets, and why you'd like to adopt..." aria-describedby="message-error" required></textarea>
+          <p class="field-error" id="message-error" hidden></p>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-submit">Submit Application</button>
+        <button type="submit" class="btn btn-primary btn-submit">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-label">Submit Application</span>
+        </button>
 
-        <p id="form-success" class="form-success" hidden>🎉 Thank you! Your application has been received. We'll be in touch soon.</p>
+        <p id="form-success" class="form-success" role="status" hidden>🎉 Thank you! Your application has been received. We'll be in touch soon.</p>
       </form>
     </div>
   </section>

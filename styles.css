@@ -321,14 +321,77 @@ a {
   flex: 1;
 }
 
-.form-row-group {
-  display: flex;
-  gap: 20px;
+.form-note {
+  margin: -4px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
 }
 
-label {
+label,
+.group-label {
   font-weight: 600;
   font-size: 0.95rem;
+}
+
+.field-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.field-error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #c0392b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-error::before {
+  content: "\26A0";
+}
+
+input.has-error,
+textarea.has-error {
+  border-color: #c0392b;
+  background: #fdf1ef;
+}
+
+.radio-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 18px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-bg);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.radio-option:has(input:checked) {
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+.radio-option input {
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.radio-group.has-error .radio-option {
+  border-color: #c0392b;
 }
 
 input,
@@ -356,6 +419,37 @@ textarea:focus {
   width: 100%;
   margin-top: 8px;
   font-size: 1.05rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-submit .spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none;
+}
+
+.btn-submit.is-loading .spinner {
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-success {
